@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Лабораторна робота №7</title>
+</head>
+<body>
+<p>Рівняння</p>
+<table>
+    <tbody>
+    <tr>
+        <td rowspan="2">res=</td>
+        <td style="border-bottom: solid 1px">2*c-a+d-152</td>
+    </tr>
+    <tr>
+        <td>a/4+c</td>
+    </tr>
+    </tbody>
+</table>
+<p></p>
+
+<form>
+    <label htmlFor="const_a">Input a:</label>
+    <br>
+    <input type="text" id="const_a" name="const_a"><br>
+    <label htmlFor="const_c">Input c:</label><br>
+    <input type="text" id="const_c" name="const_c"><br>
+    <label htmlFor="const_d">Input d:</label><br>
+    <input type="text" id="const_d" name="const_d"><br><br>
+</form>
+
+<p id="output_a";></p>
+<p id="output_c";></p>
+<p id="output_d";></p>
+<p id="output_res";></p>
+<p id="output_err";></p>
+
+<button onclick="button_is_click()">Calculate</button>
+<script>
+
+
+    function button_is_click() {
+
+        var a = const_a.value;
+        const c = const_c.value;
+        const d = const_d.value;
+        document.getElementById('output_a').innerHTML = "a= " + a;
+        document.getElementById('output_c').innerHTML = "c= " + c;
+        document.getElementById('output_d').innerHTML = "d= " + d;
+        document.getElementById('output_res').innerHTML = "\nres = " + Res(a, c, d);
+    }
+
+    function Res(a, c, d) {
+        let res = 0;
+        if (((a / 4) + c) == 0) {
+            document.getElementById('output_err').innerHTML = "Error!!! Divide by zero!";
+        } else {
+            res = (2 * c - a + d - 152) / ((a / 4) + c);
+        }
+        return res;
+    }
+
+</script>
+</body>
+</html>
